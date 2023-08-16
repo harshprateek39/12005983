@@ -11,13 +11,13 @@ router.get('/',  async(req,res)=>{
     const postData={
         
             companyName: "TrainBuddy",
-            clientID: "8bff045b-156f-4ff0-a0d5-b39967f645d9",
+            clientID: process.env.clientId,
             ownerName: "Harsh Prateek",
             ownerEmail: "harshprateek39@gmail.com",
             rollNo: "12005983",
-            clientSecret: "NopHgCEHlPRVlimw"
+            clientSecret: process.env.clientSecret
         
-    }
+    } 
     try {
         const authData=  await axios.post("http://20.244.56.144/train/auth",postData); 
         if( authData){
@@ -38,5 +38,6 @@ router.get('/',  async(req,res)=>{
     } 
    
 })
+
 export { router as trainbuddy};
 

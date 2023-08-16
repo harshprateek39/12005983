@@ -1,7 +1,8 @@
 import express from "express";
 import { trainbuddy } from "./routes/trainbuddy.js";
 import cookieParser from "cookie-parser";
-
+import dotenv from "dotenv";
+dotenv.config();
 const app= express();
 app.use(cookieParser());
 app.use(express.json());
